@@ -31,10 +31,10 @@ public class LoginDemoSteps {
 		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
 	}
 
-	@When("user enters username and password")
-	public void user_enters_username_and_password() throws InterruptedException {
-		driver.findElement(By.id("username")).sendKeys("student");
-		driver.findElement(By.id("password")).sendKeys("Password123");
+	@When("^user enters (.*) and (.*)$")
+	public void user_enters_username_and_password(String username, String password) throws InterruptedException {
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 		
 		Thread.sleep(2000);
 	}
